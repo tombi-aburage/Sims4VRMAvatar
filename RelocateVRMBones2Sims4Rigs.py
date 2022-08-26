@@ -1,5 +1,13 @@
 import bpy
 
+def relocate_init(in_armature):
+    bpy.ops.object.mode_set(mode='OBJECT')
+    bpy.ops.object.select_all(action='DESELECT')
+    bpy.context.view_layer.objects.active = bpy.context.window.scene.objects[in_armature]
+    bpy.ops.object.mode_set(mode='EDIT')
+
+relocate_init('Armature')
+
 VRoidModel = bpy.data.armatures['Armature']
 Sims4Model = bpy.data.armatures['rig'].edit_bones.data
 
@@ -46,8 +54,12 @@ VRoidModel.edit_bones['J_Bip_R_Hand'].tail.y = Sims4Model.bones['b__R_Stigmata']
 
 VRoidModel.edit_bones['J_Sec_R_Bust1'].head.xzy = Sims4Model.bones['b__CAS_R_Breast__'].head_local
 VRoidModel.edit_bones['J_Sec_R_Bust1'].head.y = Sims4Model.bones['b__CAS_R_Breast__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_R_Bust2'].head.xzy = Sims4Model.bones['b__R_breastTarget_slot'].head_local
-VRoidModel.edit_bones['J_Sec_R_Bust2'].head.y = Sims4Model.bones['b__R_breastTarget_slot'].head_local.z * -1
+VRoidModel.edit_bones['J_Sec_R_Bust1'].tail.z = Sims4Model.bones['b__CAS_R_Breast__'].head_local.y
+VRoidModel.edit_bones['J_Sec_R_Bust1'].tail.y = Sims4Model.bones['b__CAS_R_Breast__'].head_local.z * -1 - 0.002
+VRoidModel.edit_bones['J_Sec_R_Bust1'].tail.x = Sims4Model.bones['b__CAS_R_Breast__'].head_local.x
+VRoidModel.edit_bones['J_Sec_R_Bust2'].tail.z = Sims4Model.bones['b__CAS_R_Breast__'].head_local.y
+VRoidModel.edit_bones['J_Sec_R_Bust2'].tail.y = Sims4Model.bones['b__CAS_R_Breast__'].head_local.z * -1 - 0.002 - 0.002
+VRoidModel.edit_bones['J_Sec_R_Bust2'].tail.x = Sims4Model.bones['b__CAS_R_Breast__'].head_local.x
 
 VRoidModel.edit_bones['J_Bip_R_UpperLeg'].head.xzy = Sims4Model.bones['b__R_Thigh__'].head_local
 VRoidModel.edit_bones['J_Bip_R_UpperLeg'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1
@@ -81,8 +93,12 @@ VRoidModel.edit_bones['J_Bip_L_Hand'].tail.y = Sims4Model.bones['b__L_Stigmata']
 
 VRoidModel.edit_bones['J_Sec_L_Bust1'].head.xzy = Sims4Model.bones['b__CAS_L_Breast__'].head_local
 VRoidModel.edit_bones['J_Sec_L_Bust1'].head.y = Sims4Model.bones['b__CAS_L_Breast__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_L_Bust2'].head.xzy = Sims4Model.bones['b__L_breastTarget_slot'].head_local
-VRoidModel.edit_bones['J_Sec_L_Bust2'].head.y = Sims4Model.bones['b__L_breastTarget_slot'].head_local.z * -1
+VRoidModel.edit_bones['J_Sec_L_Bust1'].tail.z = Sims4Model.bones['b__CAS_L_Breast__'].head_local.y
+VRoidModel.edit_bones['J_Sec_L_Bust1'].tail.y = Sims4Model.bones['b__CAS_L_Breast__'].head_local.z * -1 - 0.002
+VRoidModel.edit_bones['J_Sec_L_Bust1'].tail.x = Sims4Model.bones['b__CAS_L_Breast__'].head_local.x
+VRoidModel.edit_bones['J_Sec_L_Bust2'].tail.z = Sims4Model.bones['b__CAS_L_Breast__'].head_local.y
+VRoidModel.edit_bones['J_Sec_L_Bust2'].tail.y = Sims4Model.bones['b__CAS_L_Breast__'].head_local.z * -1 - 0.002 - 0.002
+VRoidModel.edit_bones['J_Sec_L_Bust2'].tail.x = Sims4Model.bones['b__CAS_L_Breast__'].head_local.x
 
 VRoidModel.edit_bones['J_Bip_L_UpperLeg'].head.xzy = Sims4Model.bones['b__L_Thigh__'].head_local
 VRoidModel.edit_bones['J_Bip_L_UpperLeg'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1
@@ -92,7 +108,6 @@ VRoidModel.edit_bones['J_Bip_L_Foot'].head.xzy = Sims4Model.bones['b__L_Foot__']
 VRoidModel.edit_bones['J_Bip_L_Foot'].head.y = Sims4Model.bones['b__L_Foot__'].head_local.z * -1
 VRoidModel.edit_bones['J_Bip_L_ToeBase'].head.xzy = Sims4Model.bones['b__L_Toe__'].head_local
 VRoidModel.edit_bones['J_Bip_L_ToeBase'].head.y = Sims4Model.bones['b__L_Toe__'].head_local.z * -1
-
 
 VRoidModel.edit_bones['J_Bip_R_Thumb1'].head.xzy = Sims4Model.bones['b__R_Thumb0__'].head_local
 VRoidModel.edit_bones['J_Bip_R_Thumb1'].head.y = Sims4Model.bones['b__R_Thumb0__'].head_local.z * -1
