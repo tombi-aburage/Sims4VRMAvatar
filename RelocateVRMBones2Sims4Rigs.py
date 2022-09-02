@@ -102,11 +102,64 @@ def female_hair(in_vrm, in_sims4):
     VRoidModel.edit_bones['J_Sec_Hair2_08'].length = 0.05
     VRoidModel.edit_bones['J_Sec_Hair3_08'].length = 0.05
 
+def male_hair(in_vrm, in_sims4):
+    VRoidModel = bpy.data.armatures[in_vrm]
+    Sims4Model = bpy.data.armatures[in_sims4].edit_bones.data
+
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_07'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_07'].length = 0.05
+
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_04'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_04'].length = 0.05
+
+#    VRoidModel.edit_bones['J_Sec_Hair4_04'].length = 0.10
+
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.x = Sims4Model.bones['b__Head__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.z = Sims4Model.bones['b__Head__'].head_local.y + 0.10
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_05'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_05'].length = 0.05
     
-#def male_init(in_armature):
+#    VRoidModel.edit_bones['J_Sec_Hair4_05'].length = 0.2
+#    VRoidModel.edit_bones['J_Sec_Hair5_05'].length = 0.2
+#    VRoidModel.edit_bones['J_Sec_Hair6_05'].length = 0.2
+
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_06'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_06'].length = 0.05
+    
+#    VRoidModel.edit_bones['J_Sec_Hair4_06'].length = 0.10
+
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.25
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.25 -0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].length = 0.05
 
 relocate_init('Armature')
-female_hair('Armature','rig')
+#female_hair('Armature','rig')
+male_hair('Armature','rig')
 
 VRoidModel = bpy.data.armatures['Armature']
 Sims4Model = bpy.data.armatures['rig'].edit_bones.data
