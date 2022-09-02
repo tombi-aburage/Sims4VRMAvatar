@@ -104,9 +104,13 @@ def male(in_vrm):
     VRoidModel.edit_bones['J_Sec_L_TopsUpperArmOutside_end_01'].use_deform =False
     VRoidModel.edit_bones['J_Sec_L_TopsUpperArmInside_01'].use_deform =False
     VRoidModel.edit_bones['J_Sec_L_TopsUpperArmInside_end_01'].use_deform =False
-
+    
+#https://tombi-aburage.hatenablog.jp/entry/2022/08/18/064853
     VRoidModel.edit_bones['J_Sec_Hair1_01'].use_deform =False
     VRoidModel.edit_bones['J_Sec_Hair2_01'].use_deform =False
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].use_deform =False
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].use_deform =False
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].use_deform =False
     VRoidModel.edit_bones['J_Sec_Hair1_07'].use_deform =False
     VRoidModel.edit_bones['J_Sec_Hair2_07'].use_deform =False
     VRoidModel.edit_bones['J_Sec_Hair3_07'].use_deform =False
