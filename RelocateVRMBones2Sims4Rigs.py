@@ -6,7 +6,107 @@ def relocate_init(in_armature):
     bpy.context.view_layer.objects.active = bpy.context.window.scene.objects[in_armature]
     bpy.ops.object.mode_set(mode='EDIT')
 
+def female_hair(in_vrm, in_sims4):
+    VRoidModel = bpy.data.armatures[in_vrm]
+    Sims4Model = bpy.data.armatures[in_sims4].edit_bones.data
+    
+    VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1 - 0.10
+    VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.10
+    VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_R_SkirtFront_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x - 0.10
+    VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.08
+    VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_R_SkirtSide_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1 + 0.10
+    VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.10
+    VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_R_SkirtBack_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1 - 0.10
+    VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.10
+    VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_L_SkirtFront_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x + 0.10
+    VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.08
+    VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_L_SkirtSide_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1 + 0.10
+    VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.10
+    VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].length = 0.1
+    VRoidModel.edit_bones['J_Sec_L_SkirtBack_end_01'].length = 0.1
+
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
+    VRoidModel.edit_bones['J_Sec_Hair1_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_03'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].length = 0.05
+
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
+    VRoidModel.edit_bones['J_Sec_Hair1_04'].length = 0.10
+    VRoidModel.edit_bones['J_Sec_Hair2_04'].length = 0.10
+    VRoidModel.edit_bones['J_Sec_Hair3_04'].length = 0.10
+
+    VRoidModel.edit_bones['J_Sec_Hair4_04'].length = 0.10
+
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.x = Sims4Model.bones['b__Head__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].head.z = Sims4Model.bones['b__Head__'].head_local.y
+    VRoidModel.edit_bones['J_Sec_Hair1_05'].length = 0.2
+    VRoidModel.edit_bones['J_Sec_Hair2_05'].length = 0.2
+    VRoidModel.edit_bones['J_Sec_Hair3_05'].length = 0.2
+    
+    VRoidModel.edit_bones['J_Sec_Hair4_05'].length = 0.2
+    VRoidModel.edit_bones['J_Sec_Hair5_05'].length = 0.2
+    VRoidModel.edit_bones['J_Sec_Hair6_05'].length = 0.2
+
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
+    VRoidModel.edit_bones['J_Sec_Hair1_06'].length = 0.10
+    VRoidModel.edit_bones['J_Sec_Hair2_06'].length = 0.10
+    VRoidModel.edit_bones['J_Sec_Hair3_06'].length = 0.10
+    
+    VRoidModel.edit_bones['J_Sec_Hair4_06'].length = 0.10
+    
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_07'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_07'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_07'].length = 0.05
+    
+    VRoidModel.edit_bones['J_Sec_Hair1_08'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair1_08'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_08'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y + 0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_08'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_08'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_08'].length = 0.05
+
+    
+#def male_init(in_armature):
+
 relocate_init('Armature')
+female_hair('Armature','rig')
 
 VRoidModel = bpy.data.armatures['Armature']
 Sims4Model = bpy.data.armatures['rig'].edit_bones.data
@@ -210,41 +310,13 @@ VRoidModel.edit_bones['J_Bip_L_Little3'].tail.z = Sims4Model.bones['b__L_Pinky2_
 VRoidModel.edit_bones['J_Bip_L_Little3'].tail.y = Sims4Model.bones['b__L_Pinky2__'].head_local.z * -1
 VRoidModel.edit_bones['J_Bip_L_Little3'].tail.x = Sims4Model.bones['b__L_Pinky2__'].head_local.x + 0.02
 
-VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x
-VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1 - 0.10
-VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.10
-VRoidModel.edit_bones['J_Sec_R_SkirtFront_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_R_SkirtFront_end_01'].length = 0.1
-
-VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x - 0.10
-VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.08
-VRoidModel.edit_bones['J_Sec_R_SkirtSide_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_R_SkirtSide_end_01'].length = 0.1
-
-VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.x = Sims4Model.bones['b__R_Thigh__'].head_local.x
-VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.y = Sims4Model.bones['b__R_Thigh__'].head_local.z * -1 + 0.10
-VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].head.z = Sims4Model.bones['b__R_Thigh__'].head_local.y - 0.10
-VRoidModel.edit_bones['J_Sec_R_SkirtBack_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_R_SkirtBack_end_01'].length = 0.1
-
-VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x
-VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1 - 0.10
-VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.10
-VRoidModel.edit_bones['J_Sec_L_SkirtFront_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_L_SkirtFront_end_01'].length = 0.1
-
-VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x + 0.10
-VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.08
-VRoidModel.edit_bones['J_Sec_L_SkirtSide_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_L_SkirtSide_end_01'].length = 0.1
-
-VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.x = Sims4Model.bones['b__L_Thigh__'].head_local.x
-VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.y = Sims4Model.bones['b__L_Thigh__'].head_local.z * -1 + 0.10
-VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].head.z = Sims4Model.bones['b__L_Thigh__'].head_local.y - 0.10
-VRoidModel.edit_bones['J_Sec_L_SkirtBack_01'].length = 0.1
-VRoidModel.edit_bones['J_Sec_L_SkirtBack_end_01'].length = 0.1
+VRoidModel.edit_bones['J_Sec_Hair1_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
+VRoidModel.edit_bones['J_Sec_Hair1_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+VRoidModel.edit_bones['J_Sec_Hair1_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15
+VRoidModel.edit_bones['J_Sec_Hair2_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
+VRoidModel.edit_bones['J_Sec_Hair2_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+VRoidModel.edit_bones['J_Sec_Hair2_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15 -0.05
+VRoidModel.edit_bones['J_Sec_Hair2_01'].length = 0.05
 
 VRoidModel.edit_bones['J_Sec_R_CoatSkirtSide1_01'].head.x = Sims4Model.bones['b__R_Calf__'].head_local.x - 0.12
 VRoidModel.edit_bones['J_Sec_R_CoatSkirtSide1_01'].head.y = Sims4Model.bones['b__R_Calf__'].head_local.z * -1
@@ -255,59 +327,3 @@ VRoidModel.edit_bones['J_Sec_L_CoatSkirtSide1_01'].head.x = Sims4Model.bones['b_
 VRoidModel.edit_bones['J_Sec_L_CoatSkirtSide1_01'].head.y = Sims4Model.bones['b__L_Calf__'].head_local.z * -1
 VRoidModel.edit_bones['J_Sec_L_CoatSkirtSide1_01'].head.z = Sims4Model.bones['b__L_Calf__'].head_local.y +0.05
 VRoidModel.edit_bones['J_Sec_L_CoatSkirtSide1_01'].length = 0.15
-
-VRoidModel.edit_bones['J_Sec_Hair1_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_Hair1_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15
-VRoidModel.edit_bones['J_Sec_Hair2_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair2_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_Hair2_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15 -0.05
-VRoidModel.edit_bones['J_Sec_Hair2_01'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair1_03'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_03'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_Hair1_03'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
-VRoidModel.edit_bones['J_Sec_Hair1_03'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair2_03'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair3_03'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair1_02'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-VRoidModel.edit_bones['J_Sec_Hair1_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.08
-VRoidModel.edit_bones['J_Sec_Hair1_02'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair2_02'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair3_02'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair1_05'].head.x = Sims4Model.bones['b__Head__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_05'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_05'].head.z = Sims4Model.bones['b__Head__'].head_local.y
-VRoidModel.edit_bones['J_Sec_Hair1_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair2_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair3_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair4_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair5_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair6_05'].length = 0.2
-VRoidModel.edit_bones['J_Sec_Hair1_06'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_06'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_06'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
-VRoidModel.edit_bones['J_Sec_Hair1_06'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair2_06'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair3_06'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair4_06'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair1_04'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_04'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_04'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y
-VRoidModel.edit_bones['J_Sec_Hair1_04'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair2_04'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair3_04'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair4_04'].length = 0.10
-VRoidModel.edit_bones['J_Sec_Hair1_08'].head.x = Sims4Model.bones['b__R_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_08'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_08'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_08'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair2_08'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair3_08'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair1_07'].head.x = Sims4Model.bones['b__L_UpperArm__'].head_local.x
-VRoidModel.edit_bones['J_Sec_Hair1_07'].head.y = Sims4Model.bones['b__Head__'].head_local.z * -1 + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_07'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y + 0.15
-VRoidModel.edit_bones['J_Sec_Hair1_07'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair2_07'].length = 0.05
-VRoidModel.edit_bones['J_Sec_Hair3_07'].length = 0.05
-
