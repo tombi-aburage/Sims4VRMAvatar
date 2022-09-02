@@ -178,12 +178,16 @@ def male(in_vrm, in_sims4):
 
     VRoidModel.edit_bones['J_Sec_Hair1_02'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
     VRoidModel.edit_bones['J_Sec_Hair1_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.25
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15
     VRoidModel.edit_bones['J_Sec_Hair2_02'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
     VRoidModel.edit_bones['J_Sec_Hair2_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-    VRoidModel.edit_bones['J_Sec_Hair2_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.25 -0.05
-    VRoidModel.edit_bones['J_Sec_Hair2_02'].length = 0.05
-    VRoidModel.edit_bones['J_Sec_Hair3_02'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15 -0.05
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15 -0.10
+    VRoidModel.edit_bones['J_Sec_Hair1_02'].length = 0.04
+    VRoidModel.edit_bones['J_Sec_Hair2_02'].length = 0.04
+    VRoidModel.edit_bones['J_Sec_Hair3_02'].length = 0.04
 
 def relocate(in_vrm, in_sims4):
     VRoidModel = bpy.data.armatures[in_vrm]
@@ -390,11 +394,12 @@ def relocate(in_vrm, in_sims4):
 
     VRoidModel.edit_bones['J_Sec_Hair1_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
     VRoidModel.edit_bones['J_Sec_Hair1_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-    VRoidModel.edit_bones['J_Sec_Hair1_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15
+    VRoidModel.edit_bones['J_Sec_Hair1_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.07
     VRoidModel.edit_bones['J_Sec_Hair2_01'].head.x = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.x
     VRoidModel.edit_bones['J_Sec_Hair2_01'].head.y = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.z * -1
-    VRoidModel.edit_bones['J_Sec_Hair2_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.15 -0.05
-    VRoidModel.edit_bones['J_Sec_Hair2_01'].length = 0.05
+    VRoidModel.edit_bones['J_Sec_Hair2_01'].head.z = Sims4Model.bones['b__CAS_NoseBridge__'].head_local.y +0.07 -0.14
+    VRoidModel.edit_bones['J_Sec_Hair1_01'].length = 0.06
+    VRoidModel.edit_bones['J_Sec_Hair2_01'].length = 0.06
 
     VRoidModel.edit_bones['J_Sec_R_CoatSkirtSide1_01'].head.x = Sims4Model.bones['b__R_Calf__'].head_local.x - 0.12
     VRoidModel.edit_bones['J_Sec_R_CoatSkirtSide1_01'].head.y = Sims4Model.bones['b__R_Calf__'].head_local.z * -1
@@ -410,3 +415,4 @@ relocate_init('Armature')
 relocate('Armature','rig')
 #female('Armature','rig')
 male('Armature','rig')
+7
