@@ -1,5 +1,11 @@
 import bpy
 
+def setUnusedBoneDeformFalse_init(in_armature):
+    bpy.ops.object.mode_set(mode='OBJECT')
+    bpy.ops.object.select_all(action='DESELECT')
+    bpy.context.view_layer.objects.active = bpy.context.window.scene.objects[in_armature]
+    bpy.ops.object.mode_set(mode='EDIT')
+    
 def female(in_vrm):
 
     VRoidModel = bpy.data.armatures[in_vrm]
@@ -134,6 +140,7 @@ def male(in_vrm):
 #    VRoidModel.edit_bones['J_Sec_Hair1_08'].use_deform =False
 #    VRoidModel.edit_bones['J_Sec_Hair2_08'].use_deform =False
 #    VRoidModel.edit_bones['J_Sec_Hair3_08'].use_deform =False
-    
+
+setUnusedBoneDeformFalse_init('Armature')
 #female('Armature')
 male('Armature')
