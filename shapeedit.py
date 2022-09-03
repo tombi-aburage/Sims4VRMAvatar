@@ -117,3 +117,5 @@ def shapeedit_all(in_mesh, in_armature):
 #shapeedit_init('Fcl_ALL_Neutral', 'LionelStrickland', 'rig')
 #shapeedit_posing('Fcl_ALL_Neutral', 'rig')
 #shapeedit_finish('Fcl_ALL_Neutral', 'LionelStrickland')
+
+#shapeedit_all('LionelStrickland', 'rig')
