@@ -27,26 +27,26 @@ def shapeedit_posing(in_shapkey, in_armature):
             B['b__R_UpLid__'].rotation_mode='XYZ'
             B['b__R_UpLid__'].rotation_euler.rotate_axis('Z',math.radians(25))
         case "Fcl_ALL_Angry":
-            B['b__L_InBrow__'].location.x -= 0.009
-            B['b__R_InBrow__'].location.x -= 0.009
-            B['b__L_UpLip__'].location.x += 0.005
-            B['b__R_UpLip__'].location.x += 0.005
-            B['b__UpLip__'].location.x += 0.005
-            B['b__LoLip__'].location.x += 0.002
-            B['b__L_LoLip__'].location.x += 0.003
-            B['b__R_LoLip__'].location.x += 0.003
+            B['b__L_InBrow__'].location.x -= 0.012
+            B['b__R_InBrow__'].location.x -= 0.012
+            B['b__L_UpLip__'].location.x += 0.010
+            B['b__R_UpLip__'].location.x += 0.010
+            B['b__UpLip__'].location.x += 0.010
+            B['b__LoLip__'].location.x += 0.003
+            B['b__L_LoLip__'].location.x += 0.006
+            B['b__R_LoLip__'].location.x += 0.006
         case "Fcl_ALL_Fun":
             B['b__L_Mouth__'].location.x += 0.005
             B['b__R_Mouth__'].location.x += 0.005
         case "Fcl_ALL_Joy":
             B['b__Jaw__'].rotation_mode='XYZ'
-            B['b__Jaw__'].rotation_euler.rotate_axis('Z',math.radians(-5))
-            B['b__L_Mouth__'].location.x += 0.005
-            B['b__R_Mouth__'].location.x += 0.005
+            B['b__Jaw__'].rotation_euler.rotate_axis('Z',math.radians(-10))
+            B['b__L_Mouth__'].location.x += 0.010
+            B['b__R_Mouth__'].location.x += 0.010
             B['b__L_LoLid__'].rotation_mode='XYZ'
-            B['b__L_LoLid__'].rotation_euler.rotate_axis('Z',math.radians(-10))
+            B['b__L_LoLid__'].rotation_euler.rotate_axis('Z',math.radians(-15))
             B['b__R_LoLid__'].rotation_mode='XYZ'
-            B['b__R_LoLid__'].rotation_euler.rotate_axis('Z',math.radians(-10))
+            B['b__R_LoLid__'].rotation_euler.rotate_axis('Z',math.radians(-15))
         case "Fcl_ALL_Sorrow":
             B['b__L_InBrow__'].location.x += 0.01
             B['b__R_InBrow__'].location.x += 0.01
